@@ -42,6 +42,44 @@ const PLASTIC_SURGERY_ITEMS = [
 const DATA = {
   clinicName: "RaVida",
   tagline: "MEDICAL AND HOLISTIC CLINIC",
+  // Everything below is editable live from Admin Mode (see admin.js).
+  // These are just the starting defaults — matches the original design.
+  theme: {
+    colors: {
+      bg0: "#0a0a0a",
+      bg1: "#141414",
+      bg2: "#1b1b1b",
+      gold: "#c9a85c",
+      goldBright: "#e4c983",
+      white: "#f4f2ec",
+      gray: "#8d8d88",
+      grayDim: "#5f5f5b",
+      cardBorder: "rgba(201, 168, 92, 0.16)",
+      cardBorderHover: "rgba(201, 168, 92, 0.45)"
+    },
+    fonts: {
+      displayFont: "'Cormorant Garamond', 'Playfair Display', serif",
+      bodyFont: "'Poppins', 'Inter', sans-serif",
+      homeTitleSize: "56px",
+      screenTitleSize: "34px",
+      bodySize: "16px"
+    },
+    logo: {
+      src: "logo.jpeg",
+      size: 96
+    },
+    background: {
+      type: "default", // 'default' | 'color' | 'image' | 'video'
+      value: ""
+    },
+    icons: {
+      // category id -> icon key (see ICONS in app.js) or raw "<svg ...>" markup
+      aesthetic: "smile",
+      physio: "sun",
+      medical: "plus",
+      wellness: "clock"
+    }
+  },
   categories: [
     {
       id: "aesthetic",
