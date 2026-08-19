@@ -110,15 +110,62 @@ function renderBackground(bg) {
     layer.style.backgroundPosition = "center";
     layer.classList.add("bg-dim");
   } else if (bg.type === "video") {
-    const video = document.createElement("video");
-    video.src = bg.value;
-    video.autoplay = true;
-    video.loop = true;
-    video.muted = true;
-    video.playsInline = true;
-    layer.appendChild(video);
+    const parsed = parseVideoUrl(bg.value);
+    if (parsed.type === "file") {
+      const video = document.createElement("video");
+      video.src = parsed.src;
+      video.autoplay = true;
+      video.loop = true;
+      video.muted = true;
+      video.playsInline = true;
+      layer.appendChild(video);
+    } else if (parsed.type === "youtube" || parsed.type === "vimeo") {
+      const iframeWrap = document.createElement("div");
+      iframeWrap.className = "bg-embed-wrap";
+      const iframe = document.createElement("iframe");
+      iframe.src = parsed.src;
+      iframe.setAttribute("frameborder", "0");
+      iframe.setAttribute("allow", "autoplay; encrypted-media; fullscreen");
+      iframe.className = "bg-embed-iframe";
+      iframeWrap.appendChild(iframe);
+      layer.appendChild(iframeWrap);
+    } else {
+      // Unrecognized link — nothing we can safely embed
+      return;
+    }
     layer.classList.add("bg-dim");
   }
+}
+
+function parseVideoUrl(raw) {
+  const url = (raw || "").trim();
+  if (!url) return { type: "none" };
+
+  const ytMatch = url.match(
+    /(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]{6,})/
+  );
+  if (ytMatch) {
+    const id = ytMatch[1];
+    return {
+      type: "youtube",
+      src: `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&loop=1&playlist=${id}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1`
+    };
+  }
+
+  const vimeoMatch = url.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+  if (vimeoMatch) {
+    const id = vimeoMatch[1];
+    return {
+      type: "vimeo",
+      src: `https://player.vimeo.com/video/${id}?autoplay=1&muted=1&loop=1&background=1`
+    };
+  }
+
+  if (/\.(mp4|webm|ogg)(\?.*)?$/i.test(url) || url.startsWith("data:video")) {
+    return { type: "file", src: url };
+  }
+
+  return { type: "unknown" };
 }
 
 // ---------- Screens ----------
@@ -287,7 +334,8 @@ window.RavidaApp = {
   findSubcategory,
   el,
   ICONS,
-  badgeClass
+  badgeClass,
+  parseVideoUrl
 };
 
 applyTheme();

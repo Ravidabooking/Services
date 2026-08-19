@@ -229,7 +229,7 @@
           </select>
         </div>
         <div id="theme-bg-controls"></div>
-        <p class="admin-hint">Tip: keep uploaded images under ~300KB so publishing to GitHub stays reliable. For video, paste a hosted URL (e.g. an .mp4 link) rather than uploading a raw file.</p>
+        <p class="admin-hint">Tip: keep uploaded images under ~300KB so publishing to GitHub stays reliable. For video, paste a YouTube/Vimeo link or a direct .mp4 URL — not a video file from your computer.</p>
       </div>
     `);
 
@@ -308,12 +308,26 @@
           });
         });
       } else if (type === "video") {
-        wrap.innerHTML = `<div class="admin-field"><label>Video URL</label><input type="text" id="bg-video-url" placeholder="https://.../background.mp4" value="${t.background.value || ""}" /></div>`;
-        wrap.querySelector("#bg-video-url").addEventListener("change", (e) => {
-          t.background.value = e.target.value.trim();
+        wrap.innerHTML = `<div class="admin-field"><label>Video URL</label><input type="text" id="bg-video-url" placeholder="YouTube/Vimeo link, or a direct .mp4 URL" value="${t.background.value || ""}" /></div><p class="admin-hint" id="bg-video-status"></p>`;
+        const urlInput = wrap.querySelector("#bg-video-url");
+        const statusEl = wrap.querySelector("#bg-video-status");
+        function checkAndApply() {
+          const val = urlInput.value.trim();
+          t.background.value = val;
           markDirty();
           RavidaApp.applyTheme();
-        });
+          if (!val) { statusEl.textContent = ""; return; }
+          const parsed = RavidaApp.parseVideoUrl(val);
+          if (parsed.type === "unknown") {
+            statusEl.textContent = "This doesn't look like a YouTube/Vimeo link or a direct video file (.mp4/.webm) — it won't display.";
+            statusEl.style.color = "#e08484";
+          } else {
+            statusEl.textContent = `Recognized as ${parsed.type}. Should be playing in the background now.`;
+            statusEl.style.color = "";
+          }
+        }
+        urlInput.addEventListener("change", checkAndApply);
+        if (urlInput.value) checkAndApply();
       } else {
         wrap.innerHTML = "";
       }
