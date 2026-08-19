@@ -30,7 +30,7 @@ const DATA = {
     },
     "background": {
       "type": "video",
-      "value": "https://youtu.be/ZIW28gi_jf8"
+      "value": "https://streamable.com/n2k274"
     },
     "icons": {
       "aesthetic": "smile",
