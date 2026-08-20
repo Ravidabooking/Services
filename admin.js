@@ -229,6 +229,7 @@
           </select>
         </div>
         <div id="theme-bg-controls"></div>
+        ${sliderRow("Dark overlay strength", "overlayOpacity", Math.round((t.background.overlayOpacity ?? 0.72) * 100), 0, 100)}
         <p class="admin-hint">Tip: keep uploaded images under ~300KB so publishing to GitHub stays reliable. For video, paste a YouTube/Vimeo link or a direct .mp4 URL — not a video file from your computer.</p>
       </div>
     `);
@@ -264,6 +265,7 @@
     bindSlider(panel, "screenTitleSize", (v) => { t.fonts.screenTitleSize = v + "px"; RavidaApp.applyTheme(); });
     bindSlider(panel, "bodySize", (v) => { t.fonts.bodySize = v + "px"; RavidaApp.applyTheme(); });
     bindSlider(panel, "logoSize", (v) => { t.logo.size = v; RavidaApp.applyTheme(); });
+    bindSlider(panel, "overlayOpacity", (v) => { t.background.overlayOpacity = v / 100; RavidaApp.applyTheme(); });
 
     // Logo upload
     const logoFile = panel.querySelector("#theme-logo-file");

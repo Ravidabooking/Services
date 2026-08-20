@@ -86,6 +86,10 @@ function applyTheme() {
   const logoSize = (t.logo && t.logo.size) || 96;
   rootStyle.setProperty("--logo-size", logoSize + "px");
 
+  const overlayOpacity = t.background && typeof t.background.overlayOpacity === "number"
+    ? t.background.overlayOpacity : 0.72;
+  rootStyle.setProperty("--bg-overlay-opacity", overlayOpacity);
+
   renderBackground(t.background);
 }
 
