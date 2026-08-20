@@ -297,7 +297,7 @@ const DATA = {
     },
     {
       "id": "physio",
-      "name": "Physio and Recovery",
+      "name": "Physical Therapy",
       "icon": "sun",
       "subcategories": [
         {
@@ -319,20 +319,9 @@ const DATA = {
               "title": "Electro-Therapy",
               "subtitle": "Device-based recovery",
               "bullets": [
-                "TENS therapy",
-                "Ultrasound therapy",
-                "Shockwave therapy",
-                "EMS treatment"
-              ]
-            },
-            {
-              "title": "Thermal Recovery",
-              "subtitle": "Heat and cold therapies",
-              "bullets": [
-                "Cryotherapy",
-                "Thermotherapy",
-                "Contrast therapy",
-                "Paraffin therapy"
+                "TENS Therapy",
+                "Ultrasound Therapy",
+                "Infra-Red Therapy"
               ]
             }
           ]
@@ -343,12 +332,12 @@ const DATA = {
           "badge": "TRENDING",
           "items": [
             {
-              "title": "Sports Massage",
+              "title": "Sports Recovery Massage",
               "subtitle": "Performance-focused therapy",
               "bullets": [
-                "Pre-event massage",
-                "Post-event recovery",
-                "Maintenance massage",
+                "Pre-event Recovery Massage",
+                "Post-event Recovery",
+                "Maintenance Recovery Massage",
                 "Injury prevention"
               ]
             },
@@ -558,36 +547,6 @@ const DATA = {
           "name": "Plastic Surgery",
           "badge": "ADVANCED",
           "items": [
-            {
-              "title": "Facelift Procedures",
-              "subtitle": "Surgical facial rejuvenation",
-              "bullets": [
-                "Full facelift",
-                "Mini facelift",
-                "Neck lift",
-                "Brow lift",
-                "Eyelid surgery"
-              ]
-            },
-            {
-              "title": "Rhinoplasty",
-              "subtitle": "Nose reshaping surgery",
-              "bullets": [
-                "Primary rhinoplasty",
-                "Revision rhinoplasty",
-                "Functional rhinoplasty",
-                "Non-surgical nose job"
-              ]
-            },
-            {
-              "title": "Facial Implants",
-              "subtitle": "Structural enhancement",
-              "bullets": [
-                "Cheek implants",
-                "Chin implants",
-                "Jaw implants"
-              ]
-            },
             {
               "title": "Liposuction and Contouring",
               "subtitle": "Body sculpting surgery",
