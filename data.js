@@ -59,8 +59,7 @@ const DATA = {
                 "Cheek volume",
                 "Jawline contour",
                 "Under-eye filling",
-                "Chin augmentation",
-                "Nasolabial folds"
+                "Chin augmentation"
               ]
             },
             {
@@ -127,46 +126,6 @@ const DATA = {
                 "Cheek implants",
                 "Chin implants",
                 "Jaw structural enhancement"
-              ]
-            },
-            {
-              "title": "Liposuction and Contouring",
-              "subtitle": "Body sculpting surgery",
-              "bullets": [
-                "Traditional liposuction",
-                "VASER liposuction",
-                "Laser liposuction",
-                "High-definition contouring"
-              ]
-            },
-            {
-              "title": "Tummy Tuck",
-              "subtitle": "Abdominal refinement",
-              "bullets": [
-                "Full abdominoplasty",
-                "Mini tummy tuck",
-                "Extended tummy tuck",
-                "Lipo-abdominoplasty"
-              ]
-            },
-            {
-              "title": "Breast Procedures",
-              "subtitle": "Comprehensive breast surgery",
-              "bullets": [
-                "Breast augmentation",
-                "Breast lift",
-                "Breast reduction",
-                "Implant revision"
-              ]
-            },
-            {
-              "title": "Body Lift Surgeries",
-              "subtitle": "Comprehensive body contouring",
-              "bullets": [
-                "Arm lift",
-                "Thigh lift",
-                "Lower body lift",
-                "Brazilian butt lift"
               ]
             },
             {
@@ -259,6 +218,77 @@ const DATA = {
                 "Acne scarring",
                 "Stretch marks",
                 "Hair restoration"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sub-1787227058705",
+          "name": "Botox & Neuromodulators",
+          "items": [
+            {
+              "title": "Botox Upper Face",
+              "subtitle": "",
+              "bullets": [
+                "Forehead",
+                "Frown Lines",
+                "Crow's Feet"
+              ]
+            },
+            {
+              "title": "Botox Lower Face",
+              "subtitle": "",
+              "bullets": [
+                "Gummy Smile",
+                "Nose/Lip Flip",
+                "DAO",
+                "Chin"
+              ]
+            },
+            {
+              "title": "Botox Full Face",
+              "subtitle": "",
+              "bullets": [
+                "Jaw Slimming",
+                "Bruxism Treatment"
+              ]
+            },
+            {
+              "title": "Nefertiti Lift",
+              "subtitle": "",
+              "bullets": [
+                "Neck rejuvenation",
+                "Jawline definition"
+              ]
+            }
+          ],
+          "badge": "POPULAR"
+        },
+        {
+          "id": "sub-1787227466366",
+          "name": "Mesotherapy",
+          "items": [
+            {
+              "title": "Face",
+              "subtitle": "",
+              "bullets": [
+                "Skin rejuvenation",
+                "Vitamins & Hydration"
+              ]
+            },
+            {
+              "title": "Hair",
+              "subtitle": "",
+              "bullets": [
+                "Strengthening",
+                "Growth stimulation"
+              ]
+            },
+            {
+              "title": "Body",
+              "subtitle": "",
+              "bullets": [
+                "Localized fat reduction"
               ]
             }
           ]
