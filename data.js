@@ -107,19 +107,17 @@ const DATA = {
               "bullets": [
                 "Full facelift",
                 "Mini facelift",
-                "Neck lift",
-                "Brow lift",
-                "Eyelid surgery"
+                "Neck lift"
               ]
             },
             {
               "title": "Rhinoplasty",
               "subtitle": "Nose reshaping surgery",
               "bullets": [
-                "Primary rhinoplasty",
-                "Revision rhinoplasty",
-                "Functional rhinoplasty",
-                "Non-surgical nose job"
+                "Primary",
+                "Revision",
+                "Tip refinement",
+                "Non-surgical"
               ]
             },
             {
@@ -128,7 +126,7 @@ const DATA = {
               "bullets": [
                 "Cheek implants",
                 "Chin implants",
-                "Jaw implants"
+                "Jaw structural enhancement"
               ]
             },
             {
@@ -169,6 +167,38 @@ const DATA = {
                 "Thigh lift",
                 "Lower body lift",
                 "Brazilian butt lift"
+              ]
+            },
+            {
+              "title": "Blepharoplasty",
+              "subtitle": "Eye lid surgery",
+              "bullets": [
+                "Upper Eyelid",
+                "Lower Eyelid"
+              ]
+            },
+            {
+              "title": "Eye Lift",
+              "subtitle": "Surgical lateral canthoplasty",
+              "bullets": [
+                "Fox Eye",
+                "Cat Eye"
+              ]
+            },
+            {
+              "title": "Dimple Creation",
+              "subtitle": "Facial detail refinement procedures",
+              "bullets": [
+                "Lip Lift",
+                "Brow Lift"
+              ]
+            },
+            {
+              "title": "Nanofat Grafting",
+              "subtitle": "",
+              "bullets": [
+                "Dark Circles",
+                "Overall skin quality"
               ]
             }
           ]
